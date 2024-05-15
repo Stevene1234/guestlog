@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guest Log</title>
+</head>
+<body>
+    {% if thank_you %}
+        <p>Thank you for your submission!</p>
+    {% else %}
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+</body>
+</html>

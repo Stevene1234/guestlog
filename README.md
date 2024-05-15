@@ -15,6 +15,7 @@ Provides business guest's with a means to record their time and purpose of visit
 - Markdown Readme
 
 
-
+### v1.1
+- Visit_submission view, view tests, basic template, url routing set up.
 ### v1.0
 - Initial release with Visit model, guest log submission form, admin interface and model tests.

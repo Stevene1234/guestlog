@@ -55,10 +55,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'guest_log_project.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR / 'guest_logs/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
