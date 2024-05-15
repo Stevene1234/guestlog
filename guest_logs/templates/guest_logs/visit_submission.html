@@ -1,17 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Guest Log</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVMATS Guest Sign In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #0056b3; /* Darker blue background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff; /* White text color */
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #fff; /* White text color */
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 120px;
+        }
+        input[type="submit"] {
+            background-color: #fff; /* White background */
+            color: #0056b3; /* Darker blue text color */
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #003f7f; /* Even darker blue on hover */
+            color: #fff; /* White text color on hover */
+        }
+        .optional {
+            font-size: 12px;
+            color: #fff; /* White text color */
+        }
+        .error-message {
+            color: #dc3545;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    {% if thank_you %}
-        <p>Thank you for your submission!</p>
-    {% else %}
-        <form method="post" action="">
+    <div class="container">
+        <h1>AVMATS Guest Sign In</h1> <!-- Header with the title -->
+        <form action="{% url 'visit_submission' %}" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Submit</button>
+            {% if error_messages %}
+                <div class="error-message">
+                    {% for error_message in error_messages %}
+                        <p>{{ error_message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <label for="id_name">Name:</label>
+            <input type="text" id="id_name" name="name" required>
+            <label for="id_purpose">Purpose of Visit:</label>
+            <textarea id="id_purpose" name="purpose" required></textarea>
+            <label for="id_email">Email:</label>
+            <input type="email" id="id_email" name="email" placeholder="Email (optional)">
+            <label for="id_phone">Phone:</label>
+            <input type="text" id="id_phone" name="phone" placeholder="Phone (optional)">
+            <input type="submit" value="Submit">
         </form>
-    {% endif %}
+    </div>
 </body>
 </html>

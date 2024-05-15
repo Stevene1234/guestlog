@@ -14,7 +14,8 @@ Provides business guest's with a means to record their time and purpose of visit
 - Versioning and Changelog
 - Markdown Readme
 
-
+### v1.2
+-Template was refined
 ### v1.1
 - Visit_submission view, view tests, basic template, url routing set up.
 ### v1.0

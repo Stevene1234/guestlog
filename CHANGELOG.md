@@ -1,5 +1,10 @@
 ## Changelog 
 
+### Version 1.2.0
+- Template was refined 
+- Added CSS
+- Time Zone changed to America/Chicago
+
 ### Version 1.1.0
 - Created functional view = visit_submission
 - Created temporary template
@@ -9,7 +14,7 @@
 
 ### VERSION 1.0.0
 
-- Visit model created to SQlite 
+- Visit model created to SQLite 
 - forms.py created
 - Model registered to admin and filtering implemented.
 - Model tested
