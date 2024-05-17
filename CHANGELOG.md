@@ -1,5 +1,8 @@
 ## Changelog 
 
+### version 1.3.0
+- fixed messed up URL routing
+
 ### Version 1.2.0
 - Template was refined 
 - Added CSS

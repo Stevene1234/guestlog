@@ -14,6 +14,8 @@ Provides business guest's with a means to record their time and purpose of visit
 - Versioning and Changelog
 - Markdown Readme
 
+### v1.3
+- fixed messed up routing
 ### v1.2
 -Template was refined
 ### v1.1

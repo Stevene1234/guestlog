@@ -71,7 +71,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>AVMATS Guest Sign In</h1> <!-- Header with the title -->
+        <h1>Guest Sign In</h1> <!-- Header with the title -->
         <form action="{% url 'visit_submission' %}" method="post">
             {% csrf_token %}
             {% if error_messages %}

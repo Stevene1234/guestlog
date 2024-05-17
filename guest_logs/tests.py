@@ -36,7 +36,6 @@ class VisitModelTest(TestCase):
                                                              f"{visit_without_email_and_phone.visit_date}")
 
 
-
 from django.urls import reverse
 from .forms import VisitForm
 
@@ -75,4 +74,3 @@ class VisitSubmissionViewTest(TestCase):
         self.assertTrue(form.errors)  # Check if form has errors
         self.assertTrue('name' in form.errors)  # Check if 'name' field has error messages
         self.assertEqual(form.errors['name'], ['This field is required.'])  # Verify the specific error message
-

@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from guest_logs.views import visit_submission
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('visit/', include('guest_logs.urls')),
-    path('', visit_submission, name='home'),
+    path('', include('guest_logs.urls')),
+
 ]
